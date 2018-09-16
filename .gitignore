@@ -1,1 +1,4 @@
 db.*
+*/migrations/*
+*/__pycache__/*
+/static/*

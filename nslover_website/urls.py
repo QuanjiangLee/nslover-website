@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+from nslover_app.image_view import markdown_uploader
 from nslover_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('martor/', include('martor.urls')),
+    path(
+        'image/uploader/',
+        markdown_uploader, name='markdown_uploader_page'
+    ),
     path('', views.hello, name='hello'),
 ]
